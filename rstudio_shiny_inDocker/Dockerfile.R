@@ -8,11 +8,11 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libcairo2-dev \
   libsqlite3-dev \
   libmariadbd-dev \
-  libmariadb-client-lgpl-dev \
+  libmariadbclient-dev \
   libpq-dev \
   libssh2-1-dev \
   unixodbc-dev \
-  && R -e "source('https://bioconductor.org/biocLite.R')" \
+  && R -e "install.packages(\"BiocManager\")" \
   && install2.r --error \
     --deps TRUE \
     shiny \
